@@ -1,8 +1,8 @@
 # AIT Solutions
 
-## Desafío Técnico - Automatizador de Ingreso de Datos JR
+## Desafío Técnico - Automation Engineer
 
-¡Hola y bienvenido/a al desafío técnico para el puesto de Automatizador de Ingreso de Datos JR! Este desafío está diseñado para evaluar tus conocimientos y habilidades en Python, Selenium, SQL y Google Sheets, que son las herramientas que usamos en el día a día en la empresa, y tu capacidad para resolver problemas similares a los que tendrás si quedas seleccionado/a para el puesto. A continuación, encontrarás todos los pasos y requisitos de cada parte del desafío. Si tenés alguna duda respecto a las consignas del desafío, podés enviar un email a florencialopez@aitsolutions.com.ar con el asunto “Desafío técnico - AIT” y te responderemos en breve.
+¡Hola y bienvenido/a al desafío técnico para el puesto de Automation Engineer! Este desafío está diseñado para evaluar tus conocimientos y habilidades en Python, Selenium, SQL, Google Sheets entre otros, que son las herramientas que usamos en el día a día en la empresa, y tu capacidad para resolver problemas similares a los que tendrás si quedas seleccionado/a para el puesto. A continuación, encontrarás todos los pasos y requisitos de cada parte del desafío. Si tenés alguna duda respecto a las consignas del desafío, podés enviar un email a florencialopez@aitsolutions.com.ar con el asunto “Desafío técnico - AIT” y te responderemos en breve.
 
 ### Solución
 
@@ -10,7 +10,7 @@ Para completar el desafío, deberás hacer un fork de este repositorio de GitHub
 
 - Organizá la solución en distintas carpetas, una por cada etapa del desafío:
 
-1.  automatizacion-web
+1.  etl
 2.  sql
 3.  automatizacion-programa
 4.  listas-manuales
