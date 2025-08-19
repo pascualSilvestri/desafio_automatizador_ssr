@@ -10,10 +10,11 @@ Para completar el desafío, deberás hacer un fork de este repositorio de GitHub
 
 - Organizá la solución en distintas carpetas, una por cada etapa del desafío:
 
-1.  etl
-2.  sql
+1.  automatizacion-web
+2.  etl
 3.  automatizacion-programa
 4.  listas-manuales
+5.  proceso
 
 👉 **NOTA**: Si se te complica resolver alguna consigna de forma completa o no llegas a terminar todo, te invitamos a enviar tu solución igualmente. Podés dejarnos un comentario indicando por qué no lo pudiste resolver, qué conocimientos creés que te hacen falta para poder hacerlo o si sabés cómo encarar la solución aunque no lo pudiste lograr. Esto nos ayudará a evaluar tu perfil de manera integral. Valoramos tu esfuerzo y honestidad :)
 
@@ -21,7 +22,7 @@ Para completar el desafío, deberás hacer un fork de este repositorio de GitHub
 
 En [Boxer](https://www.instagram.com/boxergestion/?hl=es-la), nuestro sistema de gestión principal, tenemos muchos clientes que trabajan con artículos de diferentes proveedores. Estos proveedores disponen sus listas de precios para que se puedan obtener de distintas formas (vía API, descargando un archivo en su página web, a través de un programa instalable, enviando la lista por email de suscripción, entre otras). Nuestro equipo de listas se encarga de mantener actualizado el sistema de cada cliente con los artículos y precios que ofrecen sus proveedores.
 
-## Parte 1: Automatización Web
+## Parte 1: Automatización Web - Scrapping
 
 Uno de los recursos que más utiliza nuestro equipo de listas para mantener actualizados los artículos y precios de cada sistema es la automatización y procesamiento de datos con Python y Selenium.
 
@@ -87,9 +88,9 @@ Una vez que se procesan las listas de precios y se obtienen los archivos .xlsx f
 }
 ```
 
-## Parte 2: SQL
+## Parte 2: ETL
 
-En Boxer utilizamos bases de datos SQL, por lo que nuestro equipo de listas debe estar familiarizado con el lenguaje para poder ejecutar consultas periódicamente.
+En Boxer utilizamos procesos ETL para adecuar la información que llega de los proveedores de nuestros clientes a Boxer. Por esto es importante que nuestro equipo de listas y automatización este familiarizado con este proceso y herramienta como SQL para resolver los problemas que se presenten.
 
 En la carpeta "sql" del repositorio encontrarás un archivo .sql para que puedas crear una base de datos llamada “DesafioDataEntry” con varias tablas y datos. La base de datos tiene las siguientes tablas:
 
@@ -113,6 +114,7 @@ En la carpeta "sql" del repositorio encontrarás un archivo .sql para que puedas
    - Contar el número de repuestos de cada proveedor y mostrar solo aquellos proveedores que tienen al menos 1000 repuestos.
    - Obtener el repuesto más caro de cada proveedor.
    - Aplicar un recargo del 30% en los artículos de los proveedores AutoRepuestos Express y Automax cuyo precio sea mayor a $50000 y menor a $100000.
+3. Crear utilizando Python un archivo CSV que contenga la informacion rescatada de la BD en el paso 2.
 
 ## Parte 3: Automatización de Programas de Escritorio
 
@@ -150,3 +152,5 @@ Las instrucciones y los archivos que debés utilizar se encuentran en esta [carp
 - Debés utilizar Google Sheets para realizar operaciones sobre las listas, pero podés incluir otras herramientas que encuentres o consideres necesarias para llegar a la solución.
 - **Solución**: Para completar esta parte del desafío, debés subir los archivos finales formateados en la carpeta "listas-manuales" de tu solución.
   - Debés incluir un archivo README.md describiendo los pasos que realizaste para obtener cada archivo final (operaciones de Google Sheets, uso de herramientas externas, etc.).
+ 
+## Parte 5: Automatización de Procesos
