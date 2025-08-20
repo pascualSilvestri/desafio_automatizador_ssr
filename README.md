@@ -143,7 +143,7 @@ En esta parte del desafío, evaluaremos tu capacidad para trabajar con archivos 
 
 Tu objetivo será generar los archivos finales formateados para subir al sistema. Para ello, deberás seguir una serie de instrucciones y describir en un archivo README.md los pasos que fuiste realizando para obtener cada archivo final.
 
-Las instrucciones y los archivos que debés utilizar se encuentran en esta [carpeta de Google Drive](https://drive.google.com/drive/folders/1ZMSARBPpxTbVwx-9u7wJUVgM9JREl9zL?usp=sharing). Podés crear una copia de la misma en tu almacenamiento local para realizar cambios en los archivos.
+Las instrucciones y los archivos que debés utilizar se encuentran en esta [carpeta de Google Drive](https://drive.google.com/drive/folders/17DzSK70OPLNZG7hSHHSzYog577OkOip_?usp=sharing). Podés crear una copia de la misma en tu almacenamiento local para realizar cambios en los archivos.
 
 **Nota**: Si bien los archivos iniciales e instrucciones están en Google Drive, la solución debe subirse en el fork de GitHub junto al resto de las partes del desafío.
 
