@@ -154,3 +154,19 @@ Las instrucciones y los archivos que debés utilizar se encuentran en esta [carp
   - Debés incluir un archivo README.md describiendo los pasos que realizaste para obtener cada archivo final (operaciones de Google Sheets, uso de herramientas externas, etc.).
  
 ## Parte 5: Automatización de Procesos
+En esta parte del desafío evaluaremos tu capacidad para esquematizar, diagramar y detallar un flujo de trabajo, así como para proponer su automatización usando N8N, partiendo de un proceso manual de gestión de listas de precios que llega por email, pasa por ClickUp y Discord, y finalmente es preparado para su limpieza y subida a Boxer.
+
+Algunos de los proveedores de nuestros clientes no cuentan con una página web que podamos Scrappear para obtener la lista de precios ni un programa desktop que podamos automatizar, sino que realizan el envío de listas por email. Además de esto, el equipo utiliza la herramienta “ClickUp” para la gestión del trabajo  a realizar y se utiliza Discord para gestionar la comunicación institucional. Hoy en día el mail se revisa múltiples veces por dia para ver si llega una lista nueva, de llegar un mail se crea una tarjeta en ClickUp en la columna “Nueva Lista” que contenga el archivo que llego por mail, el nombre del cliente, el nombre del proveedor. Luego, la persona encargada de la limpieza de listas de precios debe revisar, múltiples veces por día, el tablero de ClickUp para ver si hay una nueva lista de precios a convertir y subir a Boxer. Con la automatización de este proceso buscamos reducir demoras, minimizar tareas repetitivas y garantizar trazabilidad.
+
+### Objetivos
+- Crear un diagrama utilizando la herramienta que sea conveniente
+- Realizar una descripción detallada del proceso indicado quién hace cada paso y con que sistemas externos interactúa
+- Marcar los puntos de automatización del proceso indicando que es lo que se puede automatizar de cada paso y como se haría
+- Realizar un workflow automatizado en N8N que refleje la propuesta de automatización
+
+### Qué debe entregar
+- README.md en "proceso" que introduzca brevemente el contexto (problema y objetivo) y explique en tus propias palabras cómo es hoy el flujo.
+- Un diagrama del proceso actual (PNG o PDF en proceso), donde marques con claridad los pasos, responsables y sistemas implicados.
+- En ese mismo diagrama, señala los puntos que propones automatizar y añade al pie una línea de justificación para cada uno.
+- Un workflow exportado de N8N (archivo ".json" exportado desde la herramienta), que refleje tu propuesta de automatización.
+
