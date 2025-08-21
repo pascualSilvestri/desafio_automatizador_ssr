@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0.43
+    container_name: mysql8-db-2
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: y7Qp!2zLw9Vx
+      MYSQL_DATABASE: repuestosDB
+      MYSQL_USER: scrapper
+      MYSQL_PASSWORD: 6vT9pQ2sXz1L
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d
+      - ./mysql-data:/var/lib/mysql
