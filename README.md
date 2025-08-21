@@ -92,29 +92,45 @@ Una vez que se procesan las listas de precios y se obtienen los archivos .xlsx f
 
 En Boxer utilizamos procesos ETL para adecuar la información que llega de los proveedores de nuestros clientes a Boxer. Por esto es importante que nuestro equipo de listas y automatización este familiarizado con este proceso y herramienta como SQL para resolver los problemas que se presenten.
 
-En la carpeta "sql" del repositorio encontrarás un archivo .sql para que puedas crear una base de datos llamada “DesafioDataEntry” con varias tablas y datos. La base de datos tiene las siguientes tablas:
+### Consigna
+
+Para esta consigna debe crear un único script de python que genere varios archivos csv:
+1. Crear un csv con todos los repuestos del proveedor Autofix cuyo precio no se haya actualizado en el último mes.
+2. Crear un csv que proponga un nuevo precio con un incremento del 15% de los repuestos de las marcas “ELEXA”, “BERU”, “SH”, “MASTERFILT” y “RN”.
+3. Crear un csv que proponga aplicar un recargo del 30% en los artículos de los proveedores AutoRepuestos Express y Automax cuyo precio sea mayor a $50000 y menor a $100000.
+4. Crear un csv de resumen por proveedor que contenga:
+   - La cantidad de repuestos de cada proveedor.
+   - La cantidad de repuestos que no tienen una descripción asignada (descripción es NULL o vacía).
+   - El repuesto más caro de cada proveedor.
+   - El promedio de precios de los repuestos para cada marca.
+
+La base de datos tiene las siguientes tablas:
 
 - **Repuesto**: id, codigo, descripción, id_marca, precio, proveedor_id, id_ultima_actualizacion.
 - **Proveedor**: id, nombre.
 - **Actualización**: id, fecha, id_proveedor.
 - **Marca**: id, nombre.
 
+### Entregables
+Para completar esta parte del desafío, debés proporcionar los siguientes documentos en la carpeta respuestas/parte2 del fork de la solución:
+ 1. Script de python que realice el ETL
+ 2. Requirements txt
+ 3. Bash script de ejemplo.
+
 ### Requisitos
 
-- **Solución**: Para completar esta parte del desafío, debés incluir las sentencias SQL que hayas utilizado en un archivo README.md subido en la carpeta "sql" al fork de la solución.
+1. El script de python debe poder ejecutarse por linea de comandos. La carpeta de salida se debe pasar como argumento.
+2. las consultas a la base de datos deben hacerse utilizando SQL puro, dentro del script de python.
+3. se debe utilizar pandas para crear el dataset de salida.
+4. Los datasets resultantes deben ser almacenados en formato csv en la carpeta de salida.
 
-### Consigna
+### Setup
+ Para realizar esta consigna se debe inicializar una base de datos de mysql y cargar la información necesaria. para ahorrar tiempos de setup, en la carpeta parte2/setup podrá encontrar una definición de docker compose que se encarga de levantar la base de datos de forma local en el puerto 3306 y poblarla con los datos necesarios para desarrollar y probrar su solución.
 
-1. Crear la base de datos a partir del script SQL del repositorio.
-2. Implementar las sentencias SQL que cumplan con cada ítem a continuación:
-   - Obtener todos los repuestos del proveedor Autofix cuyo precio no se haya actualizado en el último mes.
-   - Actualizar los repuestos de las marcas “ELEXA”, “BERU”, “SH”, “MASTERFILT” y “RN” realizando un incremento del 15% en sus precios.
-   - Obtener el promedio de precios de los repuestos por cada marca.
-   - Obtener los repuestos que no tienen una descripción asignada (descripción es NULL o vacía).
-   - Contar el número de repuestos de cada proveedor y mostrar solo aquellos proveedores que tienen al menos 1000 repuestos.
-   - Obtener el repuesto más caro de cada proveedor.
-   - Aplicar un recargo del 30% en los artículos de los proveedores AutoRepuestos Express y Automax cuyo precio sea mayor a $50000 y menor a $100000.
-3. Crear utilizando Python un archivo CSV que contenga la informacion rescatada de la BD en el paso 2.
+ ```bash
+ docker compose up -d
+ ```
+ tenga en cuenta que nencesita tener [docker](https://docs.docker.com/get-started/get-docker/) instalado. 
 
 ## Parte 3: Automatización de Programas de Escritorio
 
