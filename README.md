@@ -26,7 +26,7 @@ En [Boxer](https://www.instagram.com/boxergestion/?hl=es-la), nuestro sistema de
 
 Uno de los recursos que más utiliza nuestro equipo de listas para mantener actualizados los artículos y precios de cada sistema es la automatización y procesamiento de datos con Python y Selenium.
 
-En esta parte del desafío, evaluaremos tu capacidad para trabajar con estas herramientas. Tu objetivo será automatizar la descarga y procesamiento de 3 listas de artículos de distintos proveedores, limpiar y transform los datos para que queden con el formato necesario para ingresarse al sistema.
+En esta parte del desafío, evaluaremos tu capacidad para trabajar con estas herramientas. Tu objetivo será automatizar la descarga y procesamiento de 3 listas de artículos de distintos proveedores, limpiar y transformar los datos para que queden con el formato necesario para ingresarse al sistema.
 
 ### Requisitos
 
@@ -48,7 +48,7 @@ Implementar el código Python que realice las siguientes tareas:
 
 #### 1. Descarga de Listas de Precios
 
-Deberás ingresar a la siguiente página web [Desafío Data Entry](desafiodataentryait.vercel.app) que tiene un listado de 3 proveedores de autopartes. Cada proveedor tiene un enlace para descargar su lista de precios. Tu tarea es descargar las listas de precios de todos los proveedores.
+Deberás ingresar a la siguiente página web [Desafío Data Entry](https://desafiodataentryait.vercel.app) que tiene un listado de 3 proveedores de autopartes. Cada proveedor tiene un enlace para descargar su lista de precios. Tu tarea es descargar las listas de precios de todos los proveedores.
 
 Para obtener la lista de algunos proveedores es necesario iniciar sesión en la página. Usá las siguientes credenciales:
 
