@@ -1,0 +1,11 @@
+# Núcleo ETL
+pandas
+SQLAlchemy
+PyMySQL
+cryptography
+# Config y CLI
+python-dotenv
+click
+
+# Logs (opcional pero útil)
+loguru
