@@ -13,48 +13,80 @@ def main():
     procesarlos y enviarlos a la API.
     """
     
-    ### Ejecutar descarga de arcivos
-    # download_all_files_single_session(clean_download_dir=True)
-    
+    ## Ejecutar descarga de archivos
+    download_all_files_single_session(clean_download_dir=True)
     
     ### Procesar Datos y exportar a Excel
     print("\n" + "="*60)
     print("INICIANDO PROCESAMIENTO DE DATOS")
     print("="*60 + "\n")
     
+    # Lista para almacenar resultados
+    resultados = []
+    
     # Procesar y exportar los datos de cada proveedor
+    print("🔄 Procesando datos de AutoFix...")
     respuesta_autofix = procesar_datos_autofix()
-    if respuesta_autofix:
-        print(f"AutoFix: {respuesta_autofix}")
-    else:
-        print("AutoFix: No se pudo exportar")
+    resultados.append(('AutoFix', respuesta_autofix))
    
-    # respuesta_express = procesar_datos_express()
-    # if respuesta_express:
-    #     print(f"Express: {respuesta_express}")
-    # else:
-    #     print("Express: No se pudo exportar")
+    print("\n🔄 Procesando datos de Express...")
+    respuesta_express = procesar_datos_express()
+    resultados.append(('Express', respuesta_express))
 
-    # respuesta_repcar = procesar_datos_repcar()
-    # if respuesta_repcar:
-    #     print(f"RepCar: {respuesta_repcar}")
-    # else:
-    #     print("RepCar: No se pudo exportar")
-        
-    # # Mostrar resumen final
-    # print("\n" + "="*60)
-    # print("RESUMEN DE EXPORTACIÓN")
-    # print("="*60)
-
-   
-    # print("="*60)
-    # respuestas = [respuesta_autofix, respuesta_express, respuesta_repcar]
-
-
-    # if respuestas:
-    #     print(f"Archivos subidos: {respuestas}")
-    # else:
-    #     print("No se pudo subir el archivo.")
+    print("\n🔄 Procesando datos de RepCar...")
+    respuesta_repcar = procesar_datos_repcar()
+    resultados.append(('RepCar', respuesta_repcar))
+    
+    # Mostrar resumen final detallado
+    print("\n" + "="*60)
+    print("RESUMEN FINAL DE PROCESAMIENTO")
+    print("="*60)
+    
+    archivos_exitosos = 0
+    archivos_fallidos = 0
+    links_api = []
+    errores = []
+    
+    for proveedor, resultado in resultados:
+        if resultado:
+            if resultado.get('subida_exitosa', False):
+                print(f"✅ {proveedor}: Procesado y subido exitosamente")
+                if resultado.get('link_api'):
+                    print(f"   🔗 Link: {resultado['link_api']}")
+                    links_api.append((proveedor, resultado['link_api']))
+                archivos_exitosos += 1
+            else:
+                print(f"⚠️ {proveedor}: Procesado pero falló la subida")
+                if resultado.get('archivo_local'):
+                    print(f"   📁 Archivo local: {resultado['archivo_local']}")
+                if resultado.get('error'):
+                    print(f"   ❌ Error: {resultado['error']}")
+                    errores.append((proveedor, resultado['error']))
+                archivos_fallidos += 1
+        else:
+            print(f"❌ {proveedor}: Error en el procesamiento")
+            archivos_fallidos += 1
+            errores.append((proveedor, "Error en procesamiento de datos"))
+    
+    # Resumen estadístico
+    print(f"\n📊 ESTADÍSTICAS:")
+    print(f"   Total de archivos: {len(resultados)}")
+    print(f"   Exitosos: {archivos_exitosos}")
+    print(f"   Fallidos: {archivos_fallidos}")
+    
+    if links_api:
+        print(f"\n🔗 ENLACES DE LA API ({len(links_api)}):")
+        for proveedor, link in links_api:
+            print(f"   {proveedor}: {link}")
+    
+    if errores:
+        print(f"\n⚠️ ERRORES ENCONTRADOS ({len(errores)}):")
+        for proveedor, error in errores:
+            print(f"   {proveedor}: {error}")
+    
+    print("\n" + "="*60)
+    print("PROCESO COMPLETADO")
+    print("="*60)
 
 if __name__ == "__main__":
     main()

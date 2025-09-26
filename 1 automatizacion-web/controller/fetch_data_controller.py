@@ -97,7 +97,10 @@ def upload_files(
             if resp.status_code >= 500 or resp.status_code == 429:
                 attempt += 1
                 if attempt > max_retries:
-                    raise RuntimeError(f"Error {resp.status_code} persistente. Última respuesta: {resp.text[:500]}")
+                    error_msg = f"Error {resp.status_code} persistente tras {max_retries} reintentos. Respuesta: {resp.text[:500]}"
+                    if verbose:
+                        print(f"[upload_files] ❌ {error_msg}")
+                    raise RuntimeError(error_msg)
                 sleep_s = retry_delay * (2 ** (attempt - 1)) + random.uniform(0, 1.5)
                 if verbose:
                     print(f"[upload_files] HTTP {resp.status_code}. Reintentando en {sleep_s:.1f}s...")

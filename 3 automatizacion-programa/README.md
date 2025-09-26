@@ -1,65 +1,46 @@
-# Automatización de la Calculadora de Windows
+# Parte 3: Automatización de la Calculadora
 
-Este proyecto contiene scripts para automatizar la calculadora de Windows como demostración de automatización de aplicaciones de escritorio.
+Este proyecto automatiza la calculadora de Windows usando PyAutoGUI para demostrar la automatización de aplicaciones de escritorio.
 
-## Requisitos
+## 📋 Requisitos
 
-- Python 3.6+
+- Python 3.8+
 - PyAutoGUI
 - Pillow (PIL)
 
-## Instalación
+## 🚀 Instalación
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Scripts disponibles
-
-### 1. automatizar_calculadora.py
-
-Script básico que:
-
-- Abre la calculadora de Windows
-- Realiza una operación matemática simple (25 × 4 = 100)
-- Toma una captura de pantalla del resultado
-- Cierra la calculadora
-
-Para ejecutar:
+## 💻 Uso
 
 ```bash
 python automatizar_calculadora.py
 ```
 
-### 2. automatizar_calculadora_avanzado.py
+## 🔄 Funcionamiento
 
-Script avanzado que:
+El script realiza automáticamente:
 
-- Abre la calculadora de Windows
-- Realiza múltiples operaciones matemáticas (suma, multiplicación, división, raíz cuadrada)
-- Toma capturas de pantalla después de cada operación
-- Cierra la calculadora
+1. ✅ Abre la calculadora de Windows
+2. ✅ Realiza una operación matemática (25 × 4 = 100)
+3. ✅ Toma una captura de pantalla del resultado
+4. ✅ Cierra la calculadora
 
-Para ejecutar:
+## ⚠️ Notas Importantes
 
-```bash
-python automatizar_calculadora_avanzado.py
-```
+- **No mover el mouse** ni usar el teclado durante la ejecución
+- El script espera **3 segundos** antes de comenzar
+- Las capturas se guardan en la carpeta `capturas/`
+- Compatible con Windows (calc.exe)
 
-## Notas importantes
+## 🛠️ Dependencias
 
-1. Al ejecutar los scripts, no mueva el ratón ni use el teclado, ya que esto podría interferir con la automatización.
+- `pyautogui`: Control de mouse y teclado
+- `pillow`: Procesamiento de imágenes
 
-2. Los scripts esperan 3 segundos antes de comenzar para permitirle cambiar a la ventana correcta si es necesario.
+---
 
-3. Las capturas de pantalla se guardan en la carpeta "capturas" dentro del directorio del proyecto.
-
-4. Si la calculadora tiene un diseño diferente o se ejecuta en un sistema operativo distinto a Windows, es posible que los scripts necesiten ajustes.
-
-## Solución de problemas
-
-- Si la calculadora no se abre correctamente, asegúrese de que "calc.exe" es el comando correcto para abrir la calculadora en su sistema.
-
-- Si las teclas no funcionan según lo esperado, es posible que necesite ajustar los nombres de las teclas según el diseño de su calculadora específica.
-
-- Ajuste los tiempos de espera (time.sleep()) si la automatización va demasiado rápido o demasiado lenta para su sistema.
+**Desarrollado para el Desafío de Automatización SSR**
