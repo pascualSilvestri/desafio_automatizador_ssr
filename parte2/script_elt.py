@@ -22,7 +22,7 @@ def generar_csv_repuestos_sin_actualizar(connection, output_dir):
     
     # Consulta SQL para obtener los repuestos del proveedor Autofix sin actualización en el último mes
     query = """
-    SELECT r.id, r.codigo, r.descripcion, m.nombre AS marca, r.precio, p.nombre AS proveedor, 
+    SELECT r.id, r.codigo, r.descripcion, m.nombre AS marca, ROUND(r.precio, 2) AS precio, p.nombre AS proveedor, 
            a.fecha AS fecha_ultima_actualizacion
     FROM Repuesto r
     JOIN Proveedor p ON r.proveedor_id = p.id
@@ -54,7 +54,7 @@ def generar_csv_incremento_marcas(connection, output_dir):
     # Consulta SQL para obtener los repuestos de las marcas especificadas
     query = """
     SELECT r.id, r.codigo, r.descripcion, m.nombre AS marca, 
-           r.precio AS precio_actual,
+           ROUND(r.precio, 2) AS precio_actual,
            ROUND(r.precio * 1.15, 2) AS precio_propuesto,
            p.nombre AS proveedor
     FROM Repuesto r
@@ -89,7 +89,7 @@ def generar_csv_recargo_proveedores(connection, output_dir):
     # Consulta SQL para obtener los artículos de proveedores específicos con precios en rango
     query = """
     SELECT r.id, r.codigo, r.descripcion, m.nombre AS marca, 
-           r.precio AS precio_actual,
+           ROUND(r.precio, 2) AS precio_actual,
            ROUND(r.precio * 1.30, 2) AS precio_propuesto,
            p.nombre AS proveedor
     FROM Repuesto r
@@ -147,7 +147,7 @@ def generar_csv_resumen_proveedores(connection, output_dir):
     # 3. Repuesto más caro por proveedor
     query_mas_caro = """
     SELECT p.id, p.nombre AS proveedor, 
-           MAX(r.precio) AS precio_mas_alto,
+           ROUND(MAX(r.precio), 2) AS precio_mas_alto,
            (
                SELECT r2.codigo 
                FROM Repuesto r2 
@@ -170,7 +170,7 @@ def generar_csv_resumen_proveedores(connection, output_dir):
     # 4. Promedio de precios por marca
     query_promedio_marca = """
     SELECT m.nombre AS marca, 
-           AVG(r.precio) AS precio_promedio,
+           ROUND(AVG(r.precio), 2) AS precio_promedio,
            COUNT(r.id) AS cantidad_repuestos
     FROM Marca m
     JOIN Repuesto r ON m.id = r.marca_id
